@@ -1,0 +1,425 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Software Project Requirements",
+  "type": "object",
+  "properties": {
+    "basicInfo": {
+      "type": "object",
+      "title": "Basic Project Info",
+      "properties": {
+        "projectName": {
+          "type": "string"
+        },
+        "softwareType": {
+          "type": "string",
+          "enum": [
+            "Web",
+            "Mobile",
+            "Desktop",
+            "Hybrid/Cloud"
+          ]
+        },
+        "industryDomain": {
+          "type": "string",
+          "enum": [
+            "E-commerce",
+            "Education / EdTech",
+            "Healthcare",
+            "FinTech",
+            "Social Networking",
+            "Content Management",
+            "Restaurant Management",
+            "Hotel Management",
+            "Logistics",
+            "Travel",
+            "Other"
+          ]
+        }
+      },
+      "required": [
+        "projectName",
+        "softwareType",
+        "industryDomain"
+      ]
+    },
+    "targetAudience": {
+      "type": "object",
+      "title": "Target Audience & Scale",
+      "properties": {
+        "numUsers": {
+          "type": "string",
+          "enum": [
+            "1-5",
+            "6-10",
+            "11-50",
+            "50-100",
+            "100+"
+          ]
+        },
+        "targetMarket": {
+          "type": "string",
+          "enum": [
+            "Local",
+            "Global",
+            "Both"
+          ]
+        },
+        "targetPlatforms": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "iOS",
+              "Android",
+              "Web",
+              "Desktop",
+              "Tablet/Smart Devices"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "numUsers",
+        "targetMarket",
+        "targetPlatforms"
+      ]
+    },
+    "coreFeatures": {
+      "type": "object",
+      "title": "Core Features & Modules",
+      "properties": {
+        "authentication": {
+          "type": "string",
+          "enum": [
+            "None",
+            "Basic login",
+            "Social login",
+            "Enterprise SSO",
+            "Multi-factor authentication"
+          ]
+        },
+        "adminDashboard": {
+          "type": "string",
+          "enum": [
+            "None",
+            "Basic",
+            "Advanced",
+            "Professional"
+          ]
+        },
+        "ecommerce": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Product catalog",
+              "Cart & Checkout",
+              "Payment gateway",
+              "Shipping & Inventory"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "contentManagement": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Blog/News",
+              "Pages & Media uploads",
+              "Workflow"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "communicationFeatures": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Notifications",
+              "Messaging/Chat",
+              "Real-time updates"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "extraFeatures": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Search & Filters",
+              "Reporting & Analytics",
+              "Offline mode",
+              "File/media handling",
+              "AI/ML module"
+            ]
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "authentication",
+        "adminDashboard",
+        "ecommerce",
+        "contentManagement",
+        "communicationFeatures",
+        "extraFeatures"
+      ]
+    },
+    "integrations": {
+      "type": "object",
+      "title": "Integrations & APIs",
+      "properties": {
+        "integrationCount": {
+          "type": "string",
+          "enum": [
+            "None",
+            "1-3",
+            "4-10",
+            "10+"
+          ]
+        },
+        "thirdPartyServices": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Payment gateways",
+              "Maps/GPS",
+              "Email/SMS",
+              "Analytics",
+              "Other"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "dataMigration": {
+          "type": "string",
+          "enum": [
+            "Yes",
+            "No"
+          ]
+        }
+      },
+      "required": [
+        "integrationCount",
+        "thirdPartyServices",
+        "dataMigration"
+      ]
+    },
+    "designUX": {
+      "type": "object",
+      "title": "Design & User Experience",
+      "properties": {
+        "uiUxDesign": {
+          "type": "string",
+          "enum": [
+            "Simple",
+            "Custom",
+            "Advanced"
+          ]
+        },
+        "accessibility": {
+          "type": "string",
+          "enum": [
+            "Yes",
+            "No"
+          ]
+        },
+        "multiLanguageSupport": {
+          "type": "string",
+          "enum": [
+            "None",
+            "2-3",
+            "3-10",
+            "10+"
+          ]
+        }
+      },
+      "required": [
+        "uiUxDesign",
+        "accessibility",
+        "multiLanguageSupport"
+      ]
+    },
+    "quality": {
+      "type": "object",
+      "title": "Quality & Non-Functional Requirements",
+      "properties": {
+        "performance": {
+          "type": "string",
+          "enum": [
+            "Basic",
+            "Medium",
+            "High"
+          ]
+        },
+        "securityCompliance": {
+          "type": "string",
+          "enum": [
+            "Standard",
+            "High-security",
+            "Regulatory compliance"
+          ]
+        },
+        "availability": {
+          "type": "string",
+          "enum": [
+            "Normal",
+            "24/7 uptime"
+          ]
+        }
+      },
+      "required": [
+        "performance",
+        "securityCompliance",
+        "availability"
+      ]
+    },
+    "technology": {
+      "type": "object",
+      "title": "Technology Preferences",
+      "properties": {
+        "frontend": {
+          "type": "string",
+          "enum": [
+            "React",
+            "Angular",
+            "Vue",
+            "Other"
+          ]
+        },
+        "backend": {
+          "type": "string",
+          "enum": [
+            "Node.js",
+            "Django",
+            "Laravel",
+            "Go",
+            "Other"
+          ]
+        },
+        "mobile": {
+          "type": "string",
+          "enum": [
+            "Flutter",
+            "React Native",
+            "Swift",
+            "Kotlin",
+            "Other"
+          ]
+        },
+        "database": {
+          "type": "string",
+          "enum": [
+            "MySQL",
+            "PostgreSQL",
+            "MongoDB",
+            "Firebase",
+            "Other"
+          ]
+        },
+        "hosting": {
+          "type": "string",
+          "enum": [
+            "Cloud",
+            "On-premise",
+            "Shared"
+          ]
+        }
+      },
+      "required": [
+        "frontend",
+        "backend",
+        "mobile",
+        "database",
+        "hosting"
+      ]
+    },
+    "teamTimeline": {
+      "type": "object",
+      "title": "Team & Timeline",
+      "properties": {
+        "teamSize": {
+          "type": "string",
+          "enum": [
+            "1-3 devs",
+            "3-5 devs",
+            "5-10 devs",
+            "10+ devs"
+          ]
+        },
+        "additionalRoles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "UI/UX Designers",
+              "QA Testers",
+              "DevOps Engineers",
+              "Business Analysts"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "timeline": {
+          "type": "string",
+          "enum": [
+            "Flexible",
+            "1-3 months",
+            "3-6 months",
+            "6-12 months",
+            "Urgent"
+          ]
+        }
+      },
+      "required": [
+        "teamSize",
+        "additionalRoles",
+        "timeline"
+      ]
+    },
+    "budgetLocation": {
+      "type": "object",
+      "title": "Budget & Location Factors",
+      "properties": {
+        "developmentLocation": {
+          "type": "string",
+          "enum": [
+            "Local team",
+            "Global/Remote team",
+            "No preference"
+          ]
+        },
+        "budgetRange": {
+          "type": "string",
+          "enum": [
+            "< $5k",
+            "$5k-$20k",
+            "$20k-$100k",
+            "$100k+"
+          ]
+        }
+      },
+      "required": [
+        "developmentLocation",
+        "budgetRange"
+      ]
+    }
+  },
+  "required": [
+    "basicInfo",
+    "targetAudience",
+    "coreFeatures",
+    "integrations",
+    "designUX",
+    "quality",
+    "technology",
+    "teamTimeline",
+    "budgetLocation"
+  ]
+}
