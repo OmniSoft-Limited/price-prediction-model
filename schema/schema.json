@@ -114,6 +114,7 @@
           "items": {
             "type": "string",
             "enum": [
+              "None",
               "Product catalog",
               "Cart & Checkout",
               "Payment gateway",
@@ -127,6 +128,7 @@
           "items": {
             "type": "string",
             "enum": [
+              "None",
               "Blog/News",
               "Pages & Media uploads",
               "Workflow"
@@ -139,6 +141,7 @@
           "items": {
             "type": "string",
             "enum": [
+              "None",
               "Notifications",
               "Messaging/Chat",
               "Real-time updates"
@@ -151,6 +154,7 @@
           "items": {
             "type": "string",
             "enum": [
+              "None",
               "Search & Filters",
               "Reporting & Analytics",
               "Offline mode",
@@ -188,6 +192,7 @@
           "items": {
             "type": "string",
             "enum": [
+              "None",
               "Payment gateways",
               "Maps/GPS",
               "Email/SMS",
@@ -331,41 +336,12 @@
             "Shared"
           ]
         }
-      },
-      "required": [
-        "frontend",
-        "backend",
-        "mobile",
-        "database",
-        "hosting"
-      ]
+      }
     },
     "teamTimeline": {
       "type": "object",
       "title": "Team & Timeline",
       "properties": {
-        "teamSize": {
-          "type": "string",
-          "enum": [
-            "1-3 devs",
-            "3-5 devs",
-            "5-10 devs",
-            "10+ devs"
-          ]
-        },
-        "additionalRoles": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "UI/UX Designers",
-              "QA Testers",
-              "DevOps Engineers",
-              "Business Analysts"
-            ]
-          },
-          "uniqueItems": true
-        },
         "timeline": {
           "type": "string",
           "enum": [
@@ -378,36 +354,7 @@
         }
       },
       "required": [
-        "teamSize",
-        "additionalRoles",
         "timeline"
-      ]
-    },
-    "budgetLocation": {
-      "type": "object",
-      "title": "Budget & Location Factors",
-      "properties": {
-        "developmentLocation": {
-          "type": "string",
-          "enum": [
-            "Local team",
-            "Global/Remote team",
-            "No preference"
-          ]
-        },
-        "budgetRange": {
-          "type": "string",
-          "enum": [
-            "< $5k",
-            "$5k-$20k",
-            "$20k-$100k",
-            "$100k+"
-          ]
-        }
-      },
-      "required": [
-        "developmentLocation",
-        "budgetRange"
       ]
     }
   },
@@ -419,7 +366,6 @@
     "designUX",
     "quality",
     "technology",
-    "teamTimeline",
-    "budgetLocation"
+    "teamTimeline"
   ]
 }
