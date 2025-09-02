@@ -1,1 +1,109 @@
-links.txt
+# =====================================
+# Python
+# =====================================
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-wheel-metadata/
+*.manifest
+*.spec
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+*.env
+*.venv
+
+# =====================================
+# Jupyter / IPython
+# =====================================
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+.Trash-0
+
+# =====================================
+# R
+# =====================================
+.Rhistory
+.RData
+.Rproj.user/
+.Ruserdata
+*.Rproj
+
+# =====================================
+# Data / Datasets
+# =====================================
+data/
+datasets/
+*.csv
+*.tsv
+*.xls
+*.xlsx
+*.json
+*.parquet
+*.h5
+*.hdf5
+*.feather
+*.joblib
+*.pickle
+*.pkl
+*.db
+*.sqlite
+*.zip
+*.tar
+*.gz
+
+# =====================================
+# Logs & Outputs
+# =====================================
+*.log
+logs/
+output/
+outputs/
+results/
+*.tmp
+*.bak
+
+# =====================================
+# IDEs / Editors
+# =====================================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# =====================================
+# OS Files
+# =====================================
+.DS_Store
+Thumbs.db
+
+# =====================================
+# Cloud / Secrets
+# =====================================
+*.key
+*.pem
+*.crt
+*.token
+*.secrets
+*.credentials
+*.config
+*.yaml
+*.yml
+*.toml
+
+# =====================================
+# Docker
+# =====================================
+.dockerignore
+docker-compose.override.yml
