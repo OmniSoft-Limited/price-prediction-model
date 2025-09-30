@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  price-prediction:
+    image: omnisoft/price-prediction-model-environment
+    container_name: price-prediction-container
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/workspace
+    stdin_open: true      # equivalent to -i
+    tty: true             # equivalent to -t

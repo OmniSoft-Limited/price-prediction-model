@@ -77,7 +77,6 @@ Thumbs.db
 *.secrets
 *.credentials
 *.config
-*.yaml
 *.yml
 *.toml
 
@@ -86,3 +85,8 @@ Thumbs.db
 # =====================================
 .dockerignore
 docker-compose.override.yml
+
+temp
+model
+dataset
+links.txt
